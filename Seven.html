@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .wrap {
+            text-align: center;
+            margin-top: 100px;
+        }
+    </style>
+    <title>Seven task</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <input class="vizitorAge" type="text" placeholder="Введите Ваш возраст">
+        <button class="button">Submit</button>
+    </div>
+    <script>
+        // VIEW
+
+        let vizitorAge = document.querySelector('.vizitorAge');
+        let button = document.querySelector('.button');
+
+        //MODEL
+        function check(age) {
+            debugger
+            if (isNaN(age) || age == "") {
+                alert("Это должно быть число");
+            } else {
+                if (age > 16) {
+                    alert("Welcome")
+                } else {
+                    alert("U are too young");
+                }
+            }
+        }
+
+
+        //CONTROLER
+
+        button.addEventListener('click', go);
+
+        function go(e) {
+            e.preventDefault();
+            check(vizitorAge.value);
+        }
+    </script>
+</body>
+
+</html>

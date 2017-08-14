@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Six Task</title>
+</head>
+
+<body>
+    <h1> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident nostrum saepe magni ipsum dolorem soluta pariatur a, labore quaerat non architecto, voluptas assumenda praesentium ea, sint distinctio corporis perferendis. Doloremque. </h1>
+    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet sint amet, iure nostrum saepe error officiis odit! Optio modi fugiat ipsam accusamus cumque quaerat doloremque veniam? Eaque, molestiae quod officia? </h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus vero eligendi aperiam repellendus explicabo vitae sunt. Dignissimos, magnam dicta! Optio error ipsa autem id, pariatur, nesciunt officia temporibus corporis illo! </p>
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat quo provident magni tenetur, laboriosam at beatae necessitatibus nulla aliquam soluta quos consequuntur in, eaque facere distinctio placeat illum enim reprehenderit! </div>
+    <input class="inputTag" type="text" placeholder="Введите текст">
+    <button class="button">Подчеркнуть</button>
+
+    <script>
+        //*************************************VIEW*************************************************
+        let inputTag = document.querySelector('.inputTag');
+        let button = document.querySelector('.button');
+
+        function makeTextUnderline(tag) {
+            let tmp = document.getElementsByTagName(tag);
+            console.log(tmp);
+            for (i = 0 max = tmp.length; i < max; i++) {
+                tmp[i].style.textDecoration = "underline";
+            }
+        }
+        //*************************************MODEL************************************************
+        //*************************************CONTROLER********************************************
+        button.addEventListener('click', go);
+
+        function go(e) {
+            e.preventDefault(e);
+            makeTextUnderline(inputTag.value);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .wrap {
+            text-align: center;
+            margin-top: 100px;
+        }
+        
+        .answer {
+            margin-top: 30px;
+        }
+    </style>
+    <title>Tenth Task</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <input class="number" type="text" placeholder="Введите число">
+        <button class="button">Нажми меня</button>
+        <div class="answer"></div>
+    </div>
+    <script>
+        //*************************************VIEW*************************************************
+        let obj = {
+                number: document.querySelector('.number'),
+                button: document.querySelector('.button'),
+                answer: document.querySelector('.answer')
+            }
+            //*************************************MODEL************************************************
+        function giveAnswer(someNum) {
+            if (isNaN(someNum)) {
+                debugger
+                obj.number.value = "";
+                return obj.answer.textContent = "Введите число";
+            } else if (someNum <= 7) {
+                obj.number.value = "";
+                return obj.answer.textContent = "Число меньше или равно 7";
+            } else if (someNum >= 10) {
+                obj.number.value = "";
+                return obj.answer.textContent = someNum * someNum;
+            } else if (someNum == 8) {
+                obj.number.value = "";
+                return obj.answer.textContent = "7";
+            } else {
+                obj.number.value = "";
+                return obj.answer.textContent = "8";
+            }
+
+        }
+        //*************************************CONTROLER********************************************
+        obj.button.addEventListener('click', go);
+
+        function go(e) {
+            e.preventDefault(e);
+            giveAnswer(obj.number.value);
+        }
+    </script>
+</body>
+
+</html>

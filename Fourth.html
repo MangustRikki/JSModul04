@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .wrap {
+            text-align: center;
+            padding-top: 50px;
+        }
+    </style>
+    <title>Fourth Task</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <button class="button">Кнопка 1</button>
+        <button class="button">Кнопка 2</button>
+        <h4 class="text"></h4>
+    </div>
+    <script>
+        //*************************************VIEW*************************************************
+        let obj = {
+                buttons: document.querySelectorAll('.button'),
+                parent: document.querySelector('body'),
+                numClickText: document.querySelector('.text'),
+                clicks: 0
+            }
+            //*************************************MODEL************************************************
+
+        //*************************************CONTROLER********************************************
+        obj.parent.addEventListener('click', goCalck);
+
+        function goCalck(e) {
+            e.preventDefault();
+            var target = e.target;
+
+            if (target.tagName == 'BUTTON') {
+                obj.clicks += 1;
+                obj.numClickText.textContent = obj.clicks;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>First Task</title>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti nam repudiandae quod maiores soluta sapiente deleniti animi quisquam mollitia modi beatae porro quidem quae labore consequatur, nihil nobis, alias blanditiis.
+    </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae dolorum sed impedit illum culpa in consequatur ipsa aliquam a quam fuga expedita perferendis commodi corporis, voluptas, magni cum ipsum itaque.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae asperiores molestias quaerat harum optio ad, sunt ipsa, iusto aperiam atque ex autem ab magnam. Dolore nam sint accusamus nesciunt, laboriosam! </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni possimus suscipit officia explicabo velit minus quidem. Tenetur repellendus esse, architecto blanditiis nam illo porro. Vero sed esse necessitatibus alias enim. </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione sint, eveniet labore natus quo quibusdam, nemo tenetur debitis, iure asperiores porro? Deleniti porro, odio consequatur dolorem expedita beatae eum, iure. </p>
+
+    <input type="submit" value="MAKE RED">
+
+    <script>
+        //*************************************VIEW*************************************************
+        let makeRed = document.querySelector('input');
+
+        //*************************************MODEL************************************************
+
+
+        function makeAllParRed() {
+            var par = document.querySelectorAll('p');
+            for (i = 0, max = par.length; i < max; i++) {
+                par[i].style.color = "red";
+            }
+        }
+
+        //*************************************CONTROLER********************************************
+        makeRed.addEventListener('click', goRed);
+
+        function goRed(e) {
+            e.preventDefault();
+            makeAllParRed();
+        }
+    </script>
+</body>
+
+</html>

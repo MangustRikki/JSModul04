@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            text-align: center;
+            font-size: 20px;
+            line-height: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: seagreen;
+        }
+        
+        .wrap {
+            text-align: center;
+            margin-top: 100px;
+        }
+    </style>
+    <title>Eleventh Task</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div>Количество Ваших попыток: <span class="numUserTry">3</span></div>
+        <input type="text" class="userNum">
+        <button class="button">Угадать</button>
+        <div class="answer"></div>
+    </div>
+    <script>
+        //*************************************VIEW*************************************************
+        let obj = {
+            minNum: 0,
+            maxNum: 11,
+            randomNum: 0,
+            userNum: document.querySelector('.userNum'),
+            button: document.querySelector('.button'),
+            numUserTry: document.querySelector('.numUserTry'),
+            answer: document.querySelector('.answer')
+        }
+
+
+        //*************************************MODEL************************************************
+        function createNum() {
+            obj.randomNum = Math.floor(Math.random() * (obj.maxNum - obj.minNum) + obj.minNum);
+            console.log(obj.randomNum);
+        }
+
+        function checkUserTry(numUserTry) {
+            let x = parseInt(numUserTry.textContent);
+            if (x <= 0) {
+                return true;
+            }
+        }
+
+        function check(userNum, userTry) {
+            if (isNaN(userNum) || userNum == "") {
+                return obj.answer.textContent = "Вам следует ввести число";
+            } else if (userNum > 10 || userNum < 0) {
+                return obj.answer.textContent = "Вам следует ввести число от 0 до 10 включительно";
+            } else {
+                isGues(obj.userNum.value, obj.randomNum);
+                decreseUserTry(userTry);
+            }
+        }
+
+        function isGues(userNum, randomNum) {
+            if (userNum == randomNum) {
+                obj.answer.textContent = "Поздравляем, Вы выиграли!!!!!";
+            } else if (userNum > randomNum) {
+                obj.answer.textContent = "Ваше число больше заданого числа";
+            } else if (userNum < randomNum) {
+                obj.answer.textContent = "Ваше число меньше заданого числа";
+            }
+        }
+
+        function decreseUserTry(numUserTry) {
+            numUserTry.textContent = parseInt(numUserTry.textContent) - 1;
+        }
+
+        //*************************************CONTROLER********************************************
+        document.addEventListener('DOMContentLoaded', createNum);
+        obj.button.addEventListener('click', startGame);
+
+        function startGame(e) {
+            e.preventDefault();
+            debugger
+            if (checkUserTry(obj.numUserTry)) {
+                return obj.answer.textContent = "Вы исчерпали количество попыток";
+            };
+            check(obj.userNum.value, obj.numUserTry);
+
+        }
+    </script>
+</body>
+
+</html>

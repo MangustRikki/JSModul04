@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+
+    </style>
+    <title>Third task</title>
+</head>
+
+<body>
+    <p>lorem</p>
+    <p>lorem</p>
+    <p>lorem</p>
+    <p>lorem</p>
+    <p>lorem</p>
+
+    <script>
+        //*************************************VIEW*************************************************
+        function addNumForPar() {
+            var paragrafs = document.querySelectorAll('p');
+
+            for (i = 0, k = 1, max = paragrafs.length; i < max; i++, k++) {
+                paragrafs[i].insertAdjacentText('afterBegin', k + ". ");
+            }
+        }
+
+        addNumForPar();
+
+
+        //*************************************MODEL************************************************
+
+
+        //*************************************CONTROLER********************************************
+    </script>
+</body>
+
+</html>

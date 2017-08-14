@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .wrap {
+            text-align: center;
+            padding-top: 50px;
+        }
+    </style>
+    <title>Fives Task</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <input class="base" type="text" placeholder="Введите число">
+        <input class="exponent" type="text" placeholder="Введите его степень">
+        <button class="button">Рассчитать</button>
+        <input class="answer" type="text">
+    </div>
+    <script>
+        //*************************************VIEW*************************************************
+        let obj = {
+                number: document.querySelector('.base'),
+                exponent: document.querySelector('.exponent'),
+                answer: document.querySelector('.answer'),
+                button: document.querySelector('.button')
+            }
+            //*************************************MODEL************************************************
+        function calculate(base, exponent) {
+            let result;
+            if (isNaN(base) || isNaN(exponent)) {
+                return "Введите числа в оба поля";
+            } else {
+                return result = Math.pow(base, exponent);
+            }
+        }
+
+        //*************************************CONTROLER********************************************
+        obj.button.addEventListener('click', go);
+
+        function go(e) {
+            e.preventDefault();
+            obj.answer.value = calculate(obj.number.value, obj.exponent.value);
+        }
+    </script>
+</body>
+
+</html>
